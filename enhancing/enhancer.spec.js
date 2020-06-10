@@ -21,4 +21,22 @@ describe("game enhancing system", () => {
 
     });
 
+    describe('success item', () => {
+        const item = {
+            name: 'sword',
+            durability: 10,
+            enhancement: 10
+        };
+        
+        it("is receiving an object", () => {
+            expect(typeof(item)).toBe('object');
+        })
+
+        it("enhancement succeding increases enhancement by 1", () => {
+            enhancer.succeed(item);
+            expect(item.enhancement).toBeGreaterThan(10);
+        })
+
+    });
+
 });
